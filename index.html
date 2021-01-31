@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Gallery縮放畫廊</title>
+</head>
+<body>
+    
+    <div class="gallery">   <!--【相簿】盛裝所有相片 最底層-->
+
+        <div class="img-con">   <!--【相片1】盛裝單張相片 位於相簿內-->
+            <img src="./small/sm-blue.jpg" 
+            alt="Acqua is Ocean blue"
+            data-original="lr-blue.jpg"
+            />
+        </div>
+
+        <div class="img-con">   <!--【相片2】盛裝單張相片 位於相簿內-->
+            <img src="./small/sm-forest.jpg" 
+            alt="Verde is Forest green"
+            data-original="lr-forest.jpg"
+            />
+        </div>
+    
+        <div class="img-con">   <!--【相片3】盛裝單張相片 位於相簿內-->
+            <img src="./small/sm-orange.jpg" 
+            alt="Rosso is Sunset orange"
+            data-original="lr-orange.jpg"
+            />
+        </div>
+    
+        <div class="img-con">   <!--【相片4】盛裝單張相片 位於相簿內-->
+            <img src="./small/sm-white.jpg" 
+            alt="Blanco is Snow white"
+            data-original="lr-white.jpg"
+            />
+        </div>
+
+    </div>
+
+    <div class="modal"> <!--【彈出圖 的 背景】彈出時 覆蓋所有相片1~4-->
+        <img src="./large/lr-blue.jpg" alt="" class="large-img"/>  <!--【彈出圖 的 大圖】彈出時 覆蓋所有相片1~4-->
+        <p class="caption">123456</p>   <!--【大圖下 文字】彈出時 覆蓋所有相片1~4-->
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*===================相簿===============*/
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /*1fr 1fr=畫面切割成兩塊，每塊共佔有1個格子*/
+    /*2,1fr=同上*/
+    min-height: 100vh;
+    grid-gap: 2em;
+}
+
+.img-con{
+    overflow: hidden;   /*【照片越界】不超出框 不蓋住其他圖*/
+}
+
+.img-con img{ /*【照片】單張尺寸調整*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-out;  /*【縮放動畫】時間調整*/
+    cursor: pointer;
+}
+
+.img-con img:hover{ /*【滑過】照片 效果*/
+    transform: scale(1.2);
+}
+/*===================彈出 大圖===============*/
+.modal{
+    background: rgba(0, 0, 0, 0.8); /*======半透 黑底======*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;   /*======不動作 才可使圖片1~4可被點擊======*/
+    transition: 0.25s ease-out;
+}
+
+.modal.open{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.large-img{ /*======待會 js點開瞬間 只呈現0.5倍大小======*/
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.5);
+    transition: all 0.25s ease-out;
+}
+
+.large-img.open{    /*======待會 js點開後 只呈現 原始 1倍大小======*/
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.modal p{
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;  /*【文字起點】於畫面中間，但文字有長度導致未置中*/
+    transform: translate(-50%,-5%); /*【文字左移】文字串一半長度(-50%)*/
+}
